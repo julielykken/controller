@@ -37,24 +37,24 @@ procedure Main is
 --this demo shows howto use the 2 buttons and the touch logo. Note that the logo is a little sensitive/erratic, sometimes touching back side for ground seems to be needed.
 begin
    MicroBit.DisplayRT.Clear;
-   MicroBit.DisplayRT.Set(0,X);
+   MicroBit.DisplayRT.Set(X,4);
    loop
 
      if MicroBit.Buttons.State (Button_A) = Pressed then
         if X - 1 >= 0 then
-           MicroBit.DisplayRT.Clear(0,X);
+           MicroBit.DisplayRT.Clear(X,4);
            X := X - 1;
         end if;
-        MicroBit.DisplayRT.Set(0,X);
+        MicroBit.DisplayRT.Set(X,4);
         Put_Line ("Pressed A");
         delay 0.2;
 
      elsif MicroBit.Buttons.State (Button_B) = Pressed then
         if X + 1 < 5 then
-           MicroBit.DisplayRT.Clear(0,X);
+           MicroBit.DisplayRT.Clear(X,4);
            X := X + 1;
         end if;
-        MicroBit.DisplayRT.Set(0,X);
+        MicroBit.DisplayRT.Set(X,4);
         Put_Line ("Pressed B");
          delay 0.2;
 
