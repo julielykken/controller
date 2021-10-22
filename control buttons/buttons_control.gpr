@@ -1,0 +1,10 @@
+project Buttons_Control is
+
+   for Source_Dirs use ("obj/", "src/**", "./**");
+
+   package Compiler is
+      for Switches ("ada") use ("-g", "-O2");
+   end Compiler;
+
+end Buttons_Control;
+
