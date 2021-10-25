@@ -28,36 +28,45 @@
 --   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.   --
 --                                                                          --
 ------------------------------------------------------------------------------
-with Ada.Text_IO; use Ada.Text_IO;
-with MicroBit.DisplayRT;
-with MicroBit.DisplayRT.Symbols;
-with MicroBit.Buttons; use MicroBit.Buttons;
-procedure Main is
-   X : Integer := 2;
---this demo shows howto use the 2 buttons and the touch logo. Note that the logo is a little sensitive/erratic, sometimes touching back side for ground seems to be needed.
+--  with Ada.Text_IO; use Ada.Text_IO;
+--  with MicroBit.DisplayRT; use MicroBit.DisplayRT;
+--  with MicroBit.DisplayRT.Symbols;
+--  with MicroBit.Buttons; use MicroBit.Buttons;
+with Game;
+
+procedure Main with Priority => 0 is
 begin
-   MicroBit.DisplayRT.Clear;
-   MicroBit.DisplayRT.Set(X,4);
    loop
-
-     if MicroBit.Buttons.State (Button_A) = Pressed then
-        if X - 1 >= 0 then
-           MicroBit.DisplayRT.Clear(X,4);
-           X := X - 1;
-        end if;
-        MicroBit.DisplayRT.Set(X,4);
-        Put_Line ("Pressed A");
-        delay 0.2;
-
-     elsif MicroBit.Buttons.State (Button_B) = Pressed then
-        if X + 1 < 5 then
-           MicroBit.DisplayRT.Clear(X,4);
-           X := X + 1;
-        end if;
-        MicroBit.DisplayRT.Set(X,4);
-        Put_Line ("Pressed B");
-         delay 0.2;
-
-     end if;
+      null;
    end loop;
 end Main;
+--
+--     X : Integer := 2;
+--  --this demo shows howto use the 2 buttons and the touch logo. Note that the logo is a little sensitive/erratic, sometimes touching back side for ground seems to be needed.
+--  begin
+--     MicroBit.DisplayRT.Clear;
+--     MicroBit.DisplayRT.Set(X,4);
+--     loop
+--
+--       if MicroBit.Buttons.State (Button_A) = Pressed then
+--          if X - 1 >= 0 then
+--             MicroBit.DisplayRT.Clear(X,4);
+--             X := X - 1;
+--          end if;
+--          MicroBit.DisplayRT.Set(X,4);
+--          Put_Line ("Pressed A");
+--          delay 0.2;
+--
+--       elsif MicroBit.Buttons.State (Button_B) = Pressed then
+--          if X + 1 < 5 then
+--             MicroBit.DisplayRT.Clear(X,4);
+--             X := X + 1;
+--          end if;
+--          MicroBit.DisplayRT.Set(X,4);
+--          Put_Line ("Pressed B");
+--           delay 0.2;
+--
+--        end if;
+--       -- Scroll_Text("===__=");
+--     end loop;
+--  end Main;
